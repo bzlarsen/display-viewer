@@ -1,16 +1,18 @@
 /* Display Viewer service worker. GENERATED at build time from src/sw-template.js.
  * Job: keep a copy of every app file so the app opens with no network
  * (Airplane Mode). It never talks to any other server. */
-const BUILD_ID = '0.2.1-52289da-20260926T2305';
+const BUILD_ID = '0.3.0-c67bf1f-20260927T0005';
 const PRECACHE = [
   "./",
-  "./assets/index-BeRWluQG.css",
-  "./assets/index-CFTjwXE1.js",
+  "./assets/detector.worker-C4bQeq-j.js",
+  "./assets/index-4xMxj47C.js",
+  "./assets/index-WdrRWSw4.css",
   "./icons/apple-touch-icon.png",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./icons/icon-maskable-512.png",
   "./index.html",
+  "./legacy-nomodule.js",
   "./manifest.webmanifest"
 ];
 const CACHE = 'sdv-' + BUILD_ID;
