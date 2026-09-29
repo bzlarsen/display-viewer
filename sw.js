@@ -5,12 +5,12 @@
  * with the same behavior as the standard's `registerType: 'prompt'`: a new version installs in
  * the background and WAITS until the app sends SKIP_WAITING (Ben tapped Reload) or every window
  * is closed. The app registers it with `updateViaCache: 'none'`. */
-const BUILD_ID = '0.4.2-6f9adee-20260929T0438';
+const BUILD_ID = '0.5.0-c850993-20260929T1342';
 const PRECACHE = [
   "./",
   "./assets/detector.worker-BTVk_Xvk.js",
-  "./assets/index-D88JOrog.css",
-  "./assets/index-DlKGZUEo.js",
+  "./assets/index-67zqW99-.js",
+  "./assets/index-DqEru5nd.css",
   "./icons/apple-touch-icon.png",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
