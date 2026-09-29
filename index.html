@@ -1,28 +1,32 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark" data-theme-pref="system">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; media-src 'self' blob: mediastream:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
-    <title>Display Viewer</title>
-    <meta name="description" content="Point your iPad's rear camera at a monitor. Everything stays on the device." />
-    <meta name="color-scheme" content="dark" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-O2BtGQrGHmjE/aRVXhxN2Cgi9dPUeOjzFpfqsR5nBpg='; style-src 'self'; img-src 'self' data: blob:; media-src 'self' blob: mediastream:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
+    <title>Smart Display</title>
+    <meta name="description" content="Point your iPad's rear camera at a monitor and see it straightened. Everything stays on the device." />
+    <meta name="color-scheme" content="dark light" />
     <meta name="theme-color" content="#000000" />
+    <!-- Pre-paint theme (app-shell v1.2): the Settings and Gallery sheets follow Settings → Appearance
+         (System / Light / Dark, saved inside the existing settings entry). The camera viewer is always
+         dark. Plain ES5 so it runs everywhere; allowed by its hash in the Content-Security-Policy. -->
+    <script>(function(){var p='system';try{var s=JSON.parse(localStorage.getItem('display-viewer-settings-v1')||'{}');if(s&&(s.theme==='light'||s.theme==='dark'||s.theme==='system'))p=s.theme}catch(e){}var d=p;if(p==='system'){d='light';try{if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)d='dark'}catch(e){}}var r=document.documentElement;r.setAttribute('data-theme',d);r.setAttribute('data-theme-pref',p)})();</script>
     <!-- Home Screen web app (iOS / iPadOS) -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="Display Viewer" />
+    <meta name="apple-mobile-web-app-title" content="Smart Display" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="format-detection" content="telephone=no" />
     <link rel="manifest" href="/display-viewer/manifest.webmanifest" />
     <link rel="apple-touch-icon" href="/display-viewer/icons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/display-viewer/icons/icon-192.png" />
-    <script type="module" crossorigin src="/display-viewer/assets/index-DSYLc-DF.js"></script>
-    <link rel="stylesheet" crossorigin href="/display-viewer/assets/index-yRKVSwV-.css">
+    <script type="module" crossorigin src="/display-viewer/assets/index-DlKGZUEo.js"></script>
+    <link rel="stylesheet" crossorigin href="/display-viewer/assets/index-D88JOrog.css">
   </head>
   <body>
     <main id="app"></main>
-    <noscript>Display Viewer needs JavaScript turned on.</noscript>
+    <noscript>Smart Display needs JavaScript turned on.</noscript>
     <!-- iOS 9/10 (e.g. iPad mini 1) can't run modules: show a clear "too old" message instead of a blank page. -->
     <script nomodule src="/display-viewer/legacy-nomodule.js"></script>
   </body>

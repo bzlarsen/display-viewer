@@ -1,7 +1,7 @@
 {
   "id": "./",
-  "name": "Display Viewer",
-  "short_name": "Display Viewer",
+  "name": "Smart Display",
+  "short_name": "Smart Display",
   "description": "Point the rear camera at a monitor and see it straightened. Everything stays on the device.",
   "start_url": "./",
   "scope": "./",

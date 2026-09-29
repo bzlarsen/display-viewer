@@ -1,5 +1,5 @@
 /*
- * Display Viewer: message for iPads too old to run the app (e.g. iPad mini 1 on iOS 9).
+ * Smart Display: message for iPads too old to run the app (e.g. iPad mini 1 on iOS 9).
  * Plain ES5 so it runs on very old Safari. Browsers that understand <script type="module">
  * skip this file (it's loaded with `nomodule`), except Safari 10.1, which runs both — so we
  * also check for `noModule` support ourselves. Nothing is sent anywhere.
@@ -20,7 +20,7 @@
     h.appendChild(document.createTextNode('This iPad is too old for the camera features'));
     var p1 = document.createElement('p');
     p1.appendChild(document.createTextNode(
-      'This iPad has ' + ver + '. Display Viewer needs the camera in Safari, which arrived in iOS 11 ' +
+      'This iPad has ' + ver + '. Smart Display needs the camera in Safari, which arrived in iOS 11 ' +
       '(iPad mini 2 or newer). The iPad mini 1 can\u2019t be updated past iOS 9, so it can\u2019t run this app.'));
     var p2 = document.createElement('p');
     p2.appendChild(document.createTextNode('Please use a newer iPad. Nothing was sent anywhere.'));

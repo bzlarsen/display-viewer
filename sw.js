@@ -1,12 +1,16 @@
-/* Display Viewer service worker. GENERATED at build time from src/sw-template.js.
+/* Smart Display service worker. GENERATED at build time from src/sw-template.js.
  * Job: keep a copy of every app file so the app opens with no network
- * (Airplane Mode). It never talks to any other server. */
-const BUILD_ID = '0.4.1-e1d6b76-20260927T0307';
+ * (Airplane Mode). It never talks to any other server.
+ * Hand-written on purpose (approved exception: no vite-plugin-pwa, the app targets Safari 12),
+ * with the same behavior as the standard's `registerType: 'prompt'`: a new version installs in
+ * the background and WAITS until the app sends SKIP_WAITING (Ben tapped Reload) or every window
+ * is closed. The app registers it with `updateViaCache: 'none'`. */
+const BUILD_ID = '0.4.2-6f9adee-20260929T0438';
 const PRECACHE = [
   "./",
   "./assets/detector.worker-BTVk_Xvk.js",
-  "./assets/index-DSYLc-DF.js",
-  "./assets/index-yRKVSwV-.css",
+  "./assets/index-D88JOrog.css",
+  "./assets/index-DlKGZUEo.js",
   "./icons/apple-touch-icon.png",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
@@ -53,7 +57,8 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const req = event.request;
   if (req.method !== 'GET' || new URL(req.url).origin !== self.location.origin) return;
-  // The update check must always ask the server (and fail honestly when offline).
+  // The update check must always ask the server (and fail honestly when offline): network only.
+  // GitHub Pages can't send Cache-Control: no-cache, so the app also uses cache: 'no-store' + ?t=.
   if (new URL(req.url).pathname.endsWith('/version.json')) return;
   // Only THIS version's cache (never a file left over from an older version).
   const mine = caches.open(CACHE);
